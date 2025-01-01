@@ -4,6 +4,7 @@ NUMBER1=$1
 NUMBER2=$2
 
 TIMESTAMP=$(date)
+PRESENT PATH=$(pwd)
 echo "Script executed at: $TIMESTAMP"
 SUM=$(($NUMBER1+$NUMBER2))
 
