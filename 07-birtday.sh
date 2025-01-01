@@ -4,7 +4,7 @@
 today=$(date +%Y-%m-%d)
 
 # Define the birthday 
-birthday="10-01" # Replace with the actual birth month-day
+birthday="01-01" # Replace with the actual birth month-day
 
 # Check if today is the birthday
 if [[ "$today" == *"-"$birthday"* ]]; then
@@ -15,5 +15,5 @@ if [[ "$today" == *"-"$birthday"* ]]; then
    - Display a birthday message with decorations
   # - Send a notification
 else
-  echo "Today is not your birthday."
+  # echo "Today is not your birthday."
 fi
