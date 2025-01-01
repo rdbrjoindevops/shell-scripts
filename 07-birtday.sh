@@ -1,19 +1,14 @@
 #!/bin/bash
 
-# Get the current date
-today=$(date +%Y-%m-%d)
+# Get today's date
+today=$(date +%m-%d)
 
-# Define the birthday 
-birthday="01-01" # Replace with the actual birth month-day
+# Define your birthday (month-day format)
+my_birthday="10-01" 
 
-# Check if today is the birthday
-if [[ "$today" == *"-"$birthday"* ]]; then
-  echo "Happy Birthday!"
-  # Optional: Add more celebratory messages or actions here
-  # For example:
-  - Play a birthday song
-   - Display a birthday message with decorations
-  # - Send a notification
+# Check if today is your birthday
+if [[ "$today" == "$my_birthday" ]]; then
+  echo "Happy Birthday to you!"
 else
-  # echo "Today is not your birthday."
+  echo "Today is not your birthday."
 fi
