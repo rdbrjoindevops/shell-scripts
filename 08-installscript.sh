@@ -30,23 +30,23 @@ echo "MySQL is already ... INSTALLED"
 
 fi
 
-dnf list installed git
+dnf list installed nginx
 
 if [ $? -ne 0 ]
 then 
 
-dnf dnf install git -y
+dnf install nginx -y
 if [ $? -ne 0 ]
 then
-cho "Installing git ... FAILURE"
+cho "Installing nginx ... FAILURE"
 exit 1
 
 else 
-echo "Installing git ... SUCCESS"
+echo "Installing nginx ... SUCCESS"
 
 fi
 else 
-echo "Mgit is already ... INSTALLED"
+echo "nginx is already ... INSTALLED"
 
 fi
 
