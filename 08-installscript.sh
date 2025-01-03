@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
 
 echo " Error:: you must have sudo access to execute this script"
@@ -27,6 +27,26 @@ echo "Installing MySQL ... SUCCESS"
 fi
 else 
 echo "MySQL is already ... INSTALLED"
+
+fi
+
+dnf list installed git
+
+if [ $? -ne 0 ]
+then 
+
+dnf dnf install git -y
+if [ $? -ne 0 ]
+then
+cho "Installing git ... FAILURE"
+exit 1
+
+else 
+echo "Installing git ... SUCCESS"
+
+fi
+else 
+echo "Mgit is already ... INSTALLED"
 
 fi
 
