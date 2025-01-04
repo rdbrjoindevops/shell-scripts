@@ -2,16 +2,15 @@
 
 USERID=$(id -u)
 
-VALIDETE(){
+VALIDATE(){
     if [ $1 -ne 0 ]
-    then 
-  echo "$2 ...failure"
-  exit 1
-  else 
-  echo "$2 ...success"
-  fi
-
- }
+    then
+        echo "$2 ... FAILURE"
+        exit 1
+    else
+        echo "$2 ... SUCCESS"
+    fi
+}
 
 if [ $USERID -ne 0 ]
 then
@@ -22,29 +21,22 @@ fi
 dnf list installed mysql
 
 if [ $? -ne 0 ]
-then 
-
-dnf install mysql -y
-VALIDETE $? "INSTALL MYSQL"
-
-else 
-echo " MySQL already installed"
-
-
+then # not installed
+    dnf install mysql -y
+    VALIDATE $? "Installing MySQL"
+else
+    echo "MySQL is already ... INSTALLED"
 fi
 
-dnf list installed nginx
+
+dnf list installed git
 
 if [ $? -ne 0 ]
-then 
-
-dnf install nginx -y
-VALIDETE $? "INSTALL nginx"
-
-else 
-echo " nginx already installed"
-
-
+then
+    dnf install git -y
+    VALIDATE $? "Installing Git"
+else
+    echo "Git is already ... INSTALLED"
 fi
 
 
