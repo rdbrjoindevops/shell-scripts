@@ -29,14 +29,14 @@ else
 fi
 
 
-dnf list installed git
+dnf list installed nodejs
 
 if [ $? -ne 0 ]
 then
-    dnf install git -y
-    VALIDATE $? "Installing Git"
+    dnf install nodejs -y
+    VALIDATE $? "Installing nodejs"
 else
-    echo "Git is already ... INSTALLED"
+    echo "nodejs is already ... INSTALLED"
 fi
 
 
