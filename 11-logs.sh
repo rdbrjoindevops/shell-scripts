@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 USERID=$(id -u)
 R="\e[31m"
@@ -20,7 +20,7 @@ VALIDATE(){
         echo -e "$2 ... $G SUCCESS $N"
     fi
 }
- echo "script started executing at: $IMESTAMP" &>>$OG_FILE_NAME
+ echo "script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 if [ $USERID -ne 0 ]
 then
     echo "ERROR:: You must have sudo access to execute this script"
@@ -31,7 +31,7 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]
 then # not installed
-    dnf install mysql -y &>>$OG_FILE_NAME
+    dnf install mysql -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing MySQL"
 else
     echo -e "MySQL is already ... $Y INSTALLED"
@@ -42,7 +42,7 @@ dnf list installed nodejs
 
 if [ $? -ne 0 ]
 then
-    dnf install nodejs -y &>>$OG_FILE_NAME
+    dnf install nodejs -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing nodejs"
 else
     echo -e "nodejs is already ... $Y INSTALLED $N"
